@@ -1,30 +1,37 @@
 package com.project.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class MessGroup {
 
-    private int mId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int messId;
     private int totalMember;
     private String name;
-    private String role;
+
+
 
     public MessGroup(){
 
     }
 
-    public MessGroup(int mId, int totalMember, String name, String role) {
-        this.mId = mId;
+    public MessGroup(int messId, int totalMember, String name) {
+        this.messId = messId;
         this.totalMember = totalMember;
         this.name = name;
-        this.role = role;
     }
 
-
-    public int getmId() {
-        return mId;
+    public int getMessId() {
+        return messId;
     }
 
-    public void setmId(int mId) {
-        this.mId = mId;
+    public void setMessId(int messId) {
+        this.messId = messId;
     }
 
     public int getTotalMember() {
@@ -41,13 +48,5 @@ public class MessGroup {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 }
