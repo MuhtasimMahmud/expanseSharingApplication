@@ -1,6 +1,8 @@
 package com.project.models;
 
 import javax.persistence.*;
+import java.util.HashMap;
+import java.util.Map;
 
 
 @Entity
@@ -18,12 +20,14 @@ public class User {
     private int messID;
     private String imageUrl;
 
+    private Map<Integer, Integer> moneyBorrowed = new HashMap<>();
+    private Map<Integer, Integer> moneyGetting = new HashMap<>();
 
     public User(){
 
     }
 
-    public User(int id, String name, String email, String password, String role, boolean manager, int messID, String imageUrl) {
+    public User(int id, String name, String email, String password, String role, boolean manager, int messID, String imageUrl, Map<Integer, Integer> moneyBorrowed, Map<Integer, Integer> moneyGetting) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -32,8 +36,9 @@ public class User {
         this.manager = manager;
         this.messID = messID;
         this.imageUrl = imageUrl;
+        this.moneyBorrowed = moneyBorrowed;
+        this.moneyGetting = moneyGetting;
     }
-
 
     public int getId() {
         return id;
@@ -97,5 +102,21 @@ public class User {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public Map<Integer, Integer> getMoneyBorrowed() {
+        return moneyBorrowed;
+    }
+
+    public void setMoneyBorrowed(Map<Integer, Integer> moneyBorrowed) {
+        this.moneyBorrowed = moneyBorrowed;
+    }
+
+    public Map<Integer, Integer> getMoneyGetting() {
+        return moneyGetting;
+    }
+
+    public void setMoneyGetting(Map<Integer, Integer> moneyGetting) {
+        this.moneyGetting = moneyGetting;
     }
 }
