@@ -1,9 +1,6 @@
 package com.project.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +14,12 @@ public class MessGroup {
     private String name;
     private String managerName;
 
+    @OneToMany(cascade = CascadeType.ALL)
     private List<User> users = new ArrayList<>();
+
+
+    @OneToMany
+    private List<Months> months = new ArrayList<>();
 
     public MessGroup(){
 
