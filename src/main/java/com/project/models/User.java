@@ -9,35 +9,36 @@ import java.util.Map;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int id; // id hobe phone number
     private String name;
     @Column(unique = true)
     private String email;
     private String password;
-    private String role;
-    private boolean manager;
-    private int messID;
+    private boolean manager; // jodi ei user ta ei month er manager hoy taile ei field true hobe, naile false hobe
+    private int messID; // jodi manager field true thake taile je mess id eikhane thakbe oi mess id er gorup e enter korte parbe.
     private String imageUrl;
 
-    private Map<Integer, Integer> moneyBorrowed = new HashMap<>();
-    private Map<Integer, Integer> moneyGetting = new HashMap<>();
+
+
+    /* eikhane emon rakha jay je ekta "user" er je credentials ase she oita diyei tar user account e dhukbe. jodi she oi month er manager hoy
+    * taile messGroup account e dhukte gele just name er age manager. diye and same password diyei dhukte parbe.
+    * jokhon user account khulbe tokhon e tar credentials gula messGrouop er manager account e same vabe add kore dibo.*/
+
+    private Map<Integer, Integer> moneyBorrowed = new HashMap<>(); // user id, koto amount borrow korse
+    private Map<Integer, Integer> moneyGetting = new HashMap<>();  // user id, koto amount money pabe
 
     public User(){
 
     }
 
-    public User(int id, String name, String email, String password, String role, boolean manager, int messID, String imageUrl, Map<Integer, Integer> moneyBorrowed, Map<Integer, Integer> moneyGetting) {
+    public User(int id, String name, String email, String password, boolean manager, int messID, String imageUrl) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.role = role;
         this.manager = manager;
         this.messID = messID;
         this.imageUrl = imageUrl;
-        this.moneyBorrowed = moneyBorrowed;
-        this.moneyGetting = moneyGetting;
     }
 
     public int getId() {
@@ -70,14 +71,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 
     public boolean isManager() {
