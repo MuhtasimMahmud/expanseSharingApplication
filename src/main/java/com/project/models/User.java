@@ -18,6 +18,8 @@ public class User {
     private int messID; // jodi manager field true thake taile je mess id eikhane thakbe oi mess id er gorup e enter korte parbe.
     private String imageUrl;
 
+    @ManyToOne
+    private MessGroup messGroup;
 
 
     /* eikhane emon rakha jay je ekta "user" er je credentials ase she oita diyei tar user account e dhukbe. jodi she oi month er manager hoy
@@ -26,6 +28,14 @@ public class User {
 
     private Map<Integer, Integer> moneyBorrowed = new HashMap<>(); // user id(phn number), koto amount borrow korse
     private Map<Integer, Integer> moneyGetting = new HashMap<>();  // user id(phn number), koto amount money pabe
+
+    public MessGroup getMessGroup() {
+        return messGroup;
+    }
+
+    public void setMessGroup(MessGroup messGroup) {
+        this.messGroup = messGroup;
+    }
 
     public User(){
 
