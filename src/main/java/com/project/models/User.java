@@ -24,8 +24,8 @@ public class User {
     * taile messGroup account e dhukte gele just name er age manager. diye and same password diyei dhukte parbe.
     * jokhon user account khulbe tokhon e tar credentials gula messGrouop er manager account e same vabe add kore dibo.*/
 
-    private Map<Integer, Integer> moneyBorrowed = new HashMap<>(); // user id, koto amount borrow korse
-    private Map<Integer, Integer> moneyGetting = new HashMap<>();  // user id, koto amount money pabe
+    private Map<Integer, Integer> moneyBorrowed = new HashMap<>(); // user id(phn number), koto amount borrow korse
+    private Map<Integer, Integer> moneyGetting = new HashMap<>();  // user id(phn number), koto amount money pabe
 
     public User(){
 
