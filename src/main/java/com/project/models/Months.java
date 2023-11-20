@@ -1,36 +1,39 @@
 package com.project.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.time.Year;
 
+@Entity
 public class Months {
 
-    private Months months;
+
+    private String monthName;
     private float rent;
     private float foodBill;
     private float utilitiesBill;
-    private Year year;
+    private String year;
     private float extraBill;
+
+    @Id
+    private String id = monthName+","+year;
+
+    @ManyToOne
+    private MessGroup messGroup;
 
     public Months(){
 
     }
 
-    public Months(Months months, float rent, float foodBill, float utilitiesBill, Year year, float extraBill) {
-        this.months = months;
+    public Months(String monthName, float rent, float foodBill, float utilitiesBill, String year, float extraBill, String id) {
+        this.monthName = monthName;
         this.rent = rent;
         this.foodBill = foodBill;
         this.utilitiesBill = utilitiesBill;
         this.year = year;
         this.extraBill = extraBill;
-    }
-
-
-    public Months getMonths() {
-        return months;
-    }
-
-    public void setMonths(Months months) {
-        this.months = months;
+        this.id = id;
     }
 
     public float getRent() {
@@ -55,14 +58,6 @@ public class Months {
 
     public void setUtilitiesBill(float utilitiesBill) {
         this.utilitiesBill = utilitiesBill;
-    }
-
-    public Year getYear() {
-        return year;
-    }
-
-    public void setYear(Year year) {
-        this.year = year;
     }
 
     public float getExtraBill() {
