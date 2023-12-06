@@ -15,17 +15,17 @@ public class User {
     private String email;
     private String password;
     private boolean manager; // jodi ei user ta ei month er manager hoy taile ei field true hobe, naile false hobe
-    private int messID; // jodi manager field true thake taile je mess id eikhane thakbe oi mess id er gorup e enter korte parbe.
+    private int messID; // jodi manager field true thake taile je mess id eikhane thakbe oi mess id er gorup e enter korte parbe
     private String imageUrl;
 
 
 
     /* eikhane emon rakha jay je ekta "user" er je credentials ase she oita diyei tar user account e dhukbe. jodi she oi month er manager hoy
-    * taile messGroup account e dhukte gele just name er age manager. diye and same password diyei dhukte parbe.
+    * taile messGroup account e dhukte gele just email er age manager. diye and same password diyei dhukte parbe. (example: manager.rafi@gmail.com)
     * jokhon user account khulbe tokhon e tar credentials gula messGrouop er manager account e same vabe add kore dibo.*/
 
-    private Map<Integer, Integer> moneyBorrowed = new HashMap<>(); // user id(phn number), koto amount borrow korse
-    private Map<Integer, Integer> moneyGetting = new HashMap<>();  // user id(phn number), koto amount money pabe
+    private Map<Integer, Integer> moneyBorrowed = new HashMap<>(); // user <id(phn number), koto amount borrow korse>
+    private Map<Integer, Integer> moneyGetting = new HashMap<>();  // user <id(phn number), koto amount money pabe>
 
     public User(){
 
