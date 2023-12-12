@@ -14,23 +14,21 @@ public class MessGroup {
     private String name;
     private String managerName;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<User> users = new ArrayList<>();
-
+    private List<User> members = new ArrayList<>();
 
     @OneToMany
     private List<Months> months = new ArrayList<>();
+
 
     public MessGroup(){
 
     }
 
-    public MessGroup(int messId, int totalMember, String name, String managerName, List<User> users) {
+    public MessGroup(int messId, int totalMember, String name, String managerName) {
         this.messId = messId;
         this.totalMember = totalMember;
         this.name = name;
         this.managerName = managerName;
-        this.users = users;
     }
 
     public int getMessId() {
@@ -65,11 +63,11 @@ public class MessGroup {
         this.managerName = managerName;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public List<User> getMembers() {
+        return members;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setMembers(List<User> members) {
+        this.members = members;
     }
 }

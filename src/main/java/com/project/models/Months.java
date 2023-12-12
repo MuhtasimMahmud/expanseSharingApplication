@@ -2,6 +2,7 @@ package com.project.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.time.Year;
 
@@ -36,6 +37,14 @@ public class Months {
         this.id = id;
     }
 
+    public String getMonthName() {
+        return monthName;
+    }
+
+    public void setMonthName(String monthName) {
+        this.monthName = monthName;
+    }
+
     public float getRent() {
         return rent;
     }
@@ -60,6 +69,14 @@ public class Months {
         this.utilitiesBill = utilitiesBill;
     }
 
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
     public float getExtraBill() {
         return extraBill;
     }
@@ -67,4 +84,13 @@ public class Months {
     public void setExtraBill(float extraBill) {
         this.extraBill = extraBill;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 }
