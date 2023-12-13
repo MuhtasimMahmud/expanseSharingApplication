@@ -17,6 +17,9 @@ public class User {
     private boolean manager;
     private String password;
 
+    @ManyToOne
+    private MessGroup messGroup;
+
     public User(){
 
     }
@@ -75,5 +78,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public MessGroup getMessGroup() {
+        return messGroup;
+    }
+
+    public void setMessGroup(MessGroup messGroup) {
+        this.messGroup = messGroup;
     }
 }
